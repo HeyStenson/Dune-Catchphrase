@@ -1,28 +1,28 @@
 // *~* on page load *~* //
 $(function(){
-	getPhrases();
+	pageLoad();
 });	
 	
-// function pageLoad() {
-//   // load foods
-//   getPhrases();
-//   // set event listeners
-//   $("#new-phrase-form").on("submit", function(e){
-//     // prevent form submission
-//     e.preventDefault();
-//     // post to phrases#create
-//     $.post("/phrases", $(this).serialize())
-//       .done(function(res){
-//         // append new phrase to the page
-//         getPhrases();
-//         $("#new-phrase-form")[0].reset();
-//       });
-//   });
-// }
+function pageLoad() {
+  // load foods
+  getPhrases();
+  // set event listeners
+  $("#new-phrase-form").on("submit", function(e){
+    // prevent form submission
+    e.preventDefault();
+    // post to phrases#create
+    $.post("/phrase", $(this).serialize())
+      .done(function(res){
+        // append new phrase to the page
+        getPhrases();
+        $("#new-phrase-form")[0].reset();
+      });
+  });
+}
 
 function getPhrases() {
-  $.get("/phrases", function(res){
-  	var dunePhrases = JSON.parse(res);
+  $.get("/phrase", function(res){
+  	var dunePhrases = res;
   	console.log(dunePhrases);
   	renderPhrases(dunePhrases);
   });
@@ -40,7 +40,7 @@ function renderPhrases(dunePhrases){
 // function deletePhrase(context){
 // 	var phraseID = $(context).data()._id;
 // 	$.ajax({
-// 		url: '/phrases/' + phraseID;
+// 		url: '/phrase/' + phraseID;
 // 		type: "DELETE",
 // 		success: function(res){
 // 			getPhrases();

@@ -20,6 +20,7 @@ db.Phrase.remove({}, function(err, phrases){
 			return console.log(err)
 		};
 		console.log('created', phrases.length, "phrases");
-		// process.exit();
+		console.log(phrases);
+		process.exit();
 	})
 });
