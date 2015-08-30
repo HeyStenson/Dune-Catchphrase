@@ -40,21 +40,17 @@ app.post('/phrase', function (req, res){
 	})
 });
 
-// app.delete('/phrase/:id', function(req, res){
-// 	var id = req.params.id;
-// 	db.Phrase.remove({_id: id}, function(err, success){
-// 		if (err){
-// 			console.log(err);
-// 			return res.sendStatus(400);
-// 		} else {
-// 		res.sendStatus(200);
-// 		}
-// 	});
-// });
-
-// app.get('/phrase', function(req, res){
-// 	res.send(JSON.stringify(phraseList));
-// });
+app.delete('/phrase/:id', function(req, res){
+	var id = req.params.id;
+	db.Phrase.remove({_id: id}, function(err, success){
+		if (err){
+			console.log(err);
+			return res.sendStatus(400);
+		} else {
+		res.sendStatus(200);
+		}
+	});
+});
 
 // *~* listen up *~* //
 app.listen(3001, function(){

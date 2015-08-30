@@ -37,15 +37,15 @@ function renderPhrases(dunePhrases){
 	$('#phrase-div').append(phraseItems);
 } 	 	
 
-// function deletePhrase(context){
-// 	var phraseID = $(context).data()._id;
-// 	$.ajax({
-// 		url: '/phrase/' + phraseID;
-// 		type: "DELETE",
-// 		success: function(res){
-// 			getPhrases();
-// 		}
-// 	});
-// }   
+function deletePhrase(context){
+	var phraseID = $(context).data()._id;
+	$.ajax({
+		url: '/phrase/' + phraseID,
+		type: "DELETE",
+		success: function(res){
+			getPhrases();
+		}
+	});
+}   
 
 
