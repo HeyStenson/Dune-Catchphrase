@@ -16,8 +16,10 @@ var phraseList = [
 db.Phrase.remove({}, function(err, phrases){
 
 	db.Phrase.create(phraseList, function(err, phrases){
-		if(err) {return console.log(err)};
-		console.log(phrases);
+		if(err) {
+			return console.log(err)
+		};
+		console.log('created', phrases.length, "phrases");
 		// process.exit();
 	})
 });

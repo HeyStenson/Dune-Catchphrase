@@ -19,9 +19,11 @@
 </head>
 <body>
 	<div class="container" id="page-wrapper">
-		<header class="page-header">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 panel panel-default">
+		<div class='jumbotron'>
 			<h1>Dune Catchphrase</h1>
-		</header>
+		</div>
 
 		<form action="" class="form-inline" id="new-phrase-form">
 			<input name='word' type="text" class="form-control" id='phrase-word-input' placeholder='word'>
@@ -32,9 +34,19 @@
 	    <div id="phrase-div"></div>
   	
   	<script type="text/template" id="phrase-template">
-    	<h3> <%= word %> </h3> 
+    	<h3>
+    	<span class="caret"></span>
+    	 <%= word %> </h3> 
+    	 <button type="button" class="btn btn-default btn-xs pull-right" aria-label="Left Align">
+  			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+		</button>
+		<button type="button" class="btn btn-default btn-xs pull-right" aria-label="Left Align">
+  			<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		</button>
     	<p><%= definition %></p>
   	</script>
+  </div>
+  </div>
   	</div>
 </body>
 </html>

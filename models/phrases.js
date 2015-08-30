@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var PhraseSchema = new Schema({
 	word: String,
-	definition: String,
+	definition: String
 });
 
 var Phrase = mongoose.model('Phrase', PhraseSchema);

@@ -34,11 +34,36 @@ app.get("/", function (req, res){
 
 // *~*~* phrases index path *~*~* //
 // app.get('/phrases', function(req, res){
-// 	db.Phrase.find({}, function(err, success){
-// 		if(err) {return console.log(err)};
-// 		res.send(success);
-// 	})
-// })
+// 	db.Phrase.find({}, function(err, phraseList){
+// 		if (err) {
+//       	console.log(err);
+//       	return res.sendStatus(400);
+// 		};
+// 		res.send(phraseList);
+// 	});
+// });
+
+// app.post('/phrases', function (req, res){
+// 	var newPhrase = req.body;
+// 	db.Phrase.create(newPhrase, function (err, phrase){
+// 		if (err) {
+//       		console.log(err);
+//       		return res.sendStatus(400);
+//       	};	
+//       	res.send(phrase);
+// 	});
+// });
+
+// app.delete('/phrases/:id', function(req, res){
+// 	var id = req.params.id;
+// 	db.Phrase.remove({_id: id}, function(err, success){
+// 		if (err){
+// 			console.log(err);
+// 			return res.sendStatus(400);
+// 		}
+// 		res.sendStatus(200);
+// 	});
+// });
 
 app.get('/phrases', function(req, res){
 	res.send(JSON.stringify(phraseList));
