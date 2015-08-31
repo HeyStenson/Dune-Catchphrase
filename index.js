@@ -40,6 +40,16 @@ app.post('/phrase', function (req, res){
 	})
 });
 
+// app.put('/phrase/:id', function(req, res){
+// 	db.Phrase.update({definition: req.body.definition}, req.body, function(err, success){
+// 		if (err){
+// 			return console.log(err);
+// 		} 
+// 		console.log('updated successfully!');
+// 		res.send(success); 
+// 	})
+// })
+
 app.delete('/phrase/:id', function(req, res){
 	var id = req.params.id;
 	db.Phrase.remove({_id: id}, function(err, success){

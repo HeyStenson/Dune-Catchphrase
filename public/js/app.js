@@ -35,7 +35,22 @@ function renderPhrases(dunePhrases){
 	});
 	$('#phrase-div').html('');
 	$('#phrase-div').append(phraseItems);
-} 	 	
+} 	
+
+// function updatePhrase(){
+//   $('#update-phrase-button').click(function(e){
+//     e.preventDefault();
+//   });
+//   var phraseDef = $('#update-phrase-field').val();
+//   $.ajax({
+//     url: '/phrase/',
+//     type: 'PUT',
+//     data: phraseDef, 
+//     success: function(res){
+//       getPhrases();
+//     }
+//   });
+// } 	
 
 function deletePhrase(context){
 	var phraseID = $(context).data()._id;

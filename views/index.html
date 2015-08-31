@@ -24,7 +24,10 @@
 		<div class='jumbotron'>
 			<h1>Dune Catchphrase</h1>
 		</div>
-
+		<p>
+			Welcome to Dune. You'd better start learning the language... or else. Don't see the vocabulary word you want? Add it in using this form! 
+		</p>
+		
 		<form action="" class="form-inline" id="new-phrase-form">
 			<input name='word' type="text" class="form-control" id='phrase-word-input' placeholder='word'>
 			<input name='definition' type="text" class="form-control" id="phrase-definition-input" placeholder='Definition'>
@@ -64,14 +67,14 @@
       				<div class="modal-body">
 		      			<form>
       						<div class="form-group">
-		      					<textarea class="form-control" id="<%= _id %>"> <%= definition %>
+		      					<textarea class="form-control" rows="6" id="update-phrase-field"> <%= definition %>
 		      					</textarea>
 		      				</div>	
 		      			</form>
 		      		</div>
 		      		<div class="modal-footer">
 				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				        <button type="button" class="btn btn-primary">Save changes</button>
+				        <button type="button" id="update-phrase-button" onclick="updatePhrase(this)" class="btn btn-primary">Save changes</button>
 				     </div>	
 		    	</div>
 	  		</div>
